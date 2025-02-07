@@ -8,8 +8,8 @@ header {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
-    padding: 10px;
-    background: #333;
+    padding: 5px;
+    background: #130e74;
     color: white;
 }
 
@@ -71,6 +71,6 @@ footer {
 
 .socials {
     display: flex;
-    justify-content: center;
+    justify-content: right;
     gap: 10px;
 }
