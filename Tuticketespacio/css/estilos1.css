@@ -1,24 +1,31 @@
-* {
-    margin: 0;
+body {
+    font-family: Arial, Helvetica, sans-serif; 
+    margin: 0; 
     padding: 0;
-    box-sizing: border-box;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    background-color: #f8f8f8;
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+    padding: 5px;
+    background: #D8C4B6;
+    color: white;
 }
 
-.logo {
-    width: 150px;
-}
-
-.menu {
+.mu.menu {
     position: relative;
     display: inline-block;
+}
+
+.menu-content {
+    display: none;
+    position: absolute;
+    background: white;
+    color: black;
+    list-style: none;
+    padding: 10px;
+    box-shadow: 0px 4px 8px rgba(red, green, blue, alpha);
 }
 
 .dropdown-content {
@@ -30,8 +37,54 @@ header {
     z-index: 1;
 }
 
-.menu:hover .dropdown-content {
+.menu:hover .menu-content {
     display: block;
+}
+
+.menu-content li {
+    padding: 5px;
+    cursor: pointer;
+}
+
+.menu-content li:hover {
+    background: lightgray;
+}
+
+.concerts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+}
+
+.concert-item {
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.concert-item img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.concert-description {
+    padding: 10px;
+}
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+.socials {
+    display: flex;
+    justify-content: right;
+    gap: 10px;
 }
 
 .content-grid {
@@ -83,54 +136,4 @@ header {
 .spotify-player {
     margin-top: 20px;
     width: 100%;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-    padding: 20px;
-    display: flex;
-    justify-content: space-between;
-}
-
-.footer-links a, .social-media a {
-    color: white;
-    text-decoration: none;
-    margin-right: 20px;
-}
-
-
-.concerts-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
-}
-
-.concert-item {
-    text-align: center;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    overflow: hidden;
-}
-
-.concert-item img {
-    width: 100%;
-    height: 300px;
-    object-fit: cover;
-}
-
-.concert-description {
-    padding: 10px;
-}
-
-footer {
-    background-color: #333;
-    color: white;
-}
-
-.footer-links a, .social-media a {
-    color: white;
-    text-decoration: none;
-    margin-right: 20px;
 }
