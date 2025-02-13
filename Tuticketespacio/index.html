@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tuticketespacio</title>
     <link rel="stylesheet" href="css/estilos.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 </head>
 <body>
     <header>
@@ -19,9 +20,9 @@
                     <li><a href="index.html">Inicio</a></li>
                     <li><a href="#">Categorías</a>
                         <ul class="submenu-categorias"> 
-                            <li><a href="#">Conciertos</a></li>
-                            <li><a href="#">Teatro</a></li>
-                            <li><a href="#">Deportes</a></li>
+                            <li><a href="conciertos.html">Conciertos</a></li>
+                            <li><a href="teatros.html">Teatro</a></li>
+                            <li><a href="deportes.html">Deportes</a></li>
                         </ul>
                     </li>
                     <li><a href="#">Blog</a></li>
@@ -34,53 +35,53 @@
         <input class="barra-busqueda" type="text" placeholder="Buscar eventos...">
         </div>
 
-        <div class="auth-buttons">
-            <a href="login.html" class="auth-link">
-                <img src="images/login.png" alt="Icono de ingreso" class="auth-icon">
+        <div class="botones-autenticadores">
+            <a href="login.html" class="link-autenticarse">
+                <img src="images/login.png" alt="Icono de ingreso" class="icono-autenticarse">
                 <span>Ingresar</span>
             </a>
-            <a href="register.html" class="auth-link">
-                <img src="images/login.png" alt="Icono de registro" class="auth-icon">
+            <a href="register.html" class="link-autenticarse">
+                <img src="images/login.png" alt="Icono de registro" class="icono-autenticarse">
                 <span>Registrarse</span>
             </a>
         </div>
     </header>
 
-
-
-    <div class="event-highlight">
-        <img src="images/destacadorock.jpg" alt="Evento Destacado" width="100%">
-    </div>
-
-    <div class="category">
-        <h2>Conciertos</h2>
-        <div class="events">
-            <div class="event"><img src="images/concierto1.png" alt="Evento 1" width="400px"></div>
-            <div class="event"><img src="images/concierto2.png" alt="Evento 2" width="400px"></div>
-            <div class="event"><img src="images/concierto3.png" alt="Evento 3" width="400px"></div>
+    <main>
+        <div class="event-highlight">
+            <img src="images/destacadorock.jpg" alt="Evento Destacado" width="100%">
         </div>
-        <a href="conciertos.html">Ver más</a>
-    </div>
 
-    <div class="category">
-        <h2>Teatro</h2>
-        <div class="events">
-            <div class="event"><img src="images/teatro1.png" alt="Evento 1" width="400px"></div>
-            <div class="event"><img src="images/teatro2.png" alt="Evento 2" width="400px"></div>
-            <div class="event"><img src="images/teatro3.png" alt="Evento 3" width="400px"></div>            
+        <div class="category">
+            <h2>Conciertos</h2>
+            <div class="events">
+                <div class="event"><img src="images/concierto1.png" alt="Evento 1" width="400px"></div>
+                <div class="event"><img src="images/concierto2.png" alt="Evento 2" width="400px"></div>
+                <div class="event"><img src="images/concierto3.png" alt="Evento 3" width="400px"></div>
+            </div>
+            <a href="conciertos.html">Ver más</a>
         </div>
-        <a href="teatros.html">Ver más</a>
-    </div>
 
-    <div class="category">
-        <h2>Deportes</h2>
-        <div class="events">
-            <div class="event"><img src="images/deporte1.png" alt="Evento 1" width="400px"></div>
-            <div class="event"><img src="images/deporte2.png" alt="Evento 2" width="400px"></div>
-            <div class="event"><img src="images/deporte3.png" alt="Evento 3" width="400px"></div>            
+        <div class="category">
+            <h2>Teatro</h2>
+            <div class="events">
+                <div class="event"><img src="images/teatro1.png" alt="Evento 1" width="400px"></div>
+                <div class="event"><img src="images/teatro2.png" alt="Evento 2" width="400px"></div>
+                <div class="event"><img src="images/teatro3.png" alt="Evento 3" width="400px"></div>            
+            </div>
+            <a href="teatros.html">Ver más</a>
         </div>
-        <a href="deportes.html">Ver más</a>
-    </div>
+
+        <div class="category">
+            <h2>Deportes</h2>
+            <div class="events">
+                <div class="event"><img src="images/deporte1.png" alt="Evento 1" width="400px"></div>
+                <div class="event"><img src="images/deporte2.png" alt="Evento 2" width="400px"></div>
+                <div class="event"><img src="images/deporte3.png" alt="Evento 3" width="400px"></div>            
+            </div>
+            <a href="deportes.html">Ver más</a>
+        </div>
+    </main>
 
     <footer>
         <div>
@@ -89,10 +90,14 @@
             <a href="#">Términos y Condiciones</a>
             <a href="#">Libro de Reclamaciones</a>
         </div>
-        <div class="socials">
+        <div class="redes-sociales">
             <a href="#">Facebook</a>
             <a href="#">Instagram</a>
             <a href="#">TikTok</a>
+        </div>
+
+        <div>
+            <a href="index.html"><img src="images/logo.png" alt="logo" width="80%"></a>
         </div>
     </footer>
 </body>
