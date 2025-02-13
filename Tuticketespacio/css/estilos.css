@@ -2,48 +2,127 @@ body {
     font-family: Arial, Helvetica, sans-serif; 
     margin: 0; 
     padding: 0;
-}
+    background-image: url(../images/fondo.jpg);
+}  
+
+
+
+/*PARTE DE ARRIBA*/
 
 header {
     display: flex; 
     justify-content: space-between; 
     align-items: center; 
     padding: 5px;
-    background: #D8C4B6;
-    color: white;
+    background: none;
+    margin-top: 20px;
 }
 
-.mu.menu {
-    position: relative;
-    display: inline-block;
+nav {
+    max-width: 900px;
+    margin: auto;
+    background-color: none;
+    font-size: 20px;
+    margin-top: 40px;
 }
 
-.menu-content {
-    display: none;
-    position: absolute;
-    background: white;
-    color: black;
+.menu-horizontal { 
+    display: flex;
     list-style: none;
-    padding: 10px;
-    box-shadow: 0px 4px 8px rgba(red, green, blue, alpha);
+    justify-content: space-around;
 }
 
-.menu:hover .menu-content {
+.menu-horizontal > li > a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 15px 20px;
+}
+
+.menu-horizontal li:hover {
+    background: rgb(56, 0, 33);
+}
+
+.submenu-categorias {
+    background-color: rgb(27, 0, 180);
+    width: 200px;
+    list-style: none;
+    position: absolute;
+    display: none;
+    z-index: 1
+}
+
+.menu-horizontal li:hover .submenu-categorias {
     display: block;
 }
 
-.menu-content li {
-    padding: 5px;
-    cursor: pointer;
+.submenu-categorias > li > a {
+    text-decoration: none;
+    color: white;
+    padding: 15px;
+    display: block
 }
 
-.menu-content li:hover {
-    background: lightgray;
+.submenu-categorias > li:hover {
+    background-color: none;
 }
 
-.search-bar {
+.barra-busqueda {
     margin: 0 10px;
+        padding: 0.8rem 1rem;
+    border: none;
+    border-radius: 20px;
+    width: 250px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.9);
+    transition: all 0.3s ease;
 }
+
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.auth-link {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    color: #333;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    background-color: #f8f9fa;
+}
+
+.auth-link:hover {
+    background-color: #e9ecef;
+    transform: translateY(-2px);
+}
+
+.auth-icon {
+    width: 24px;
+    height: 24px;
+    object-fit: contain;
+}
+
+.auth-link span {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+
+
+
+
+
+/*PARTE DEL BODY*/
+
+h2 {
+    color: white;
+}
+
 
 .event-highlight, .category {
     text-align: center;
@@ -62,8 +141,14 @@ header {
     width: 30%;
 }
 
+
+
+
+
+/*PARTE DEL FOOTER*/
+
 footer {
-    background: #333;
+    background: none;
     color: white;
     text-align: center;
     padding: 20px;

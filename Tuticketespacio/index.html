@@ -3,23 +3,50 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Tuticketespacio</title>
     <link rel="stylesheet" href="css/estilos.css">
 </head>
 <body>
     <header>
-        <div><img src="images/logo.png" alt="logo" width="60%"></div>
-        <div class="menu">            
-            <span>Categorías</span>
-            <ul class="menu-content">
-                <il>Conciertos</il>
-                <il>Teatro</il>
-                <il>Deportes</il>
-            </ul>
+
+        <div>
+            <a href="index.html"><img src="images/logo.png" alt="logo" width="75%"></a>
         </div>
-        <input class="search-bar" type="text" placeholder="Buscar eventos...">
-        <button>Login</button>
+
+        <div class="menu">
+            <nav>     
+                <ul class="menu-horizontal">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#">Categorías</a>
+                        <ul class="submenu-categorias"> 
+                            <li><a href="#">Conciertos</a></li>
+                            <li><a href="#">Teatro</a></li>
+                            <li><a href="#">Deportes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Entrevistas</a></li>
+                </ul>
+            </nav>  
+        </div>
+
+        <div>
+        <input class="barra-busqueda" type="text" placeholder="Buscar eventos...">
+        </div>
+
+        <div class="auth-buttons">
+            <a href="login.html" class="auth-link">
+                <img src="images/login.png" alt="Icono de ingreso" class="auth-icon">
+                <span>Ingresar</span>
+            </a>
+            <a href="register.html" class="auth-link">
+                <img src="images/login.png" alt="Icono de registro" class="auth-icon">
+                <span>Registrarse</span>
+            </a>
+        </div>
     </header>
+
+
 
     <div class="event-highlight">
         <img src="images/destacadorock.jpg" alt="Evento Destacado" width="100%">

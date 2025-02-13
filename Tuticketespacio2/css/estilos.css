@@ -1,3 +1,7 @@
+body {
+    background-image: url(../images/fondo.jpg);
+}
+
 * {
     margin: 0;
     padding: 0;
