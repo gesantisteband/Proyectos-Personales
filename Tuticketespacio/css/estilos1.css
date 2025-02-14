@@ -12,10 +12,16 @@ body {
 header {
     display: flex; 
     justify-content: space-between; 
-    align-items: center; 
-    padding: 5px;
-    background: none;
-    margin-top: 20px;
+    align-items: center;
+    padding: 0px;
+    background: linear-gradient(to right, #072cff, #2c3e50); /*Efecto difuminado del color*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 nav {
@@ -39,21 +45,40 @@ nav {
     padding: 15px 20px;
 }
 
-.menu-horizontal li:hover {
-    background: rgb(56, 0, 33);
+
+/*Efecto para marcar amarrillo*/
+
+header a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #f1c40f;
+    transition: width 0.3s ease;
+}
+
+header a:hover::after {
+    width: 100%;
+}
+
+header a:hover {
+    color: #f1c40f;
+}
+
+
+.menu-horizontal li:hover .submenu-categorias {
+    display: block;
 }
 
 .submenu-categorias {
-    background-color: rgb(63, 29, 252);
+    background-color: #2c3e50;
     width: 200px;
     list-style: none;
     position: absolute;
     display: none;
     z-index: 1
-}
-
-.menu-horizontal li:hover .submenu-categorias {
-    display: block;
 }
 
 .submenu-categorias > li > a {
@@ -69,7 +94,7 @@ nav {
 
 .barra-busqueda {
     margin: 0 10px;
-        padding: 0.8rem 1rem;
+    padding: 0.8rem 1rem;
     border: none;
     border-radius: 20px;
     width: 250px;
@@ -78,13 +103,13 @@ nav {
     transition: all 0.3s ease;
 }
 
-.auth-buttons {
+.botones-autenticadores {
     display: flex;
     gap: 1rem;
     align-items: center;
 }
 
-.auth-link {
+.link-autenticarse {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -96,18 +121,18 @@ nav {
     background-color: #f8f9fa;
 }
 
-.auth-link:hover {
+.link-autenticarse:hover {
     background-color: #e9ecef;
     transform: translateY(-2px);
 }
 
-.auth-icon {
+.icono-autenticarse {
     width: 24px;
     height: 24px;
     object-fit: contain;
 }
 
-.auth-link span {
+.link-autenticarse span {
     font-size: 0.9rem;
     font-weight: 500;
 }
@@ -124,6 +149,25 @@ h1 {
     color: white;
 }
 
+
+/* Botón "Ver más" */
+.subtitulo a {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: linear-gradient(to right, #072cff, #2c3e50); /*Efecto difuminado del color*/
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 1rem;
+}
+
+.subtitulo a:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    background: linear-gradient(to right, #072cff, #2c3e50); /*Efecto difuminado del color*/
+}
 
 
 
@@ -217,7 +261,7 @@ h1 {
 
 /* Estilos generales del footer */
 footer {
-    background: url(../images/fondo.jpg);
+    background: linear-gradient(to right, #072cff, #2c3e50); /*Efecto difuminado del color*/
     color: white;
     padding: 3rem 2rem;
     display: flex;
@@ -263,12 +307,12 @@ footer a:hover {
 }
 
 /* Redes sociales */
-.socials {
+.redes-sociales {
     display: flex;
     gap: 1.5rem;
 }
 
-.socials a {
+.redes-sociales a {
     display: flex;
     align-items: center;
     padding: 0.5rem 1rem;
@@ -277,12 +321,12 @@ footer a:hover {
     transition: all 0.3s ease;
 }
 
-.socials a:hover {
+.redes-sociales a:hover {
     background: rgba(255, 255, 255, 0.2);
     transform: translateY(-2px);
 }
 
-/* Responsive design */
+/* Diseño Responsive */
 @media (max-width: 768px) {
     footer {
         flex-direction: column;
@@ -295,7 +339,7 @@ footer a:hover {
         gap: 1rem;
     }
 
-    .socials {
+    .redes-sociales {
         margin-top: 1.5rem;
     }
 }

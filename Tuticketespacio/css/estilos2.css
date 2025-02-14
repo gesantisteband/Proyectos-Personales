@@ -15,7 +15,7 @@ header {
     justify-content: space-between; 
     align-items: center;
     padding: 0px;
-    background-image: url(../images/fondo.jpg);
+    background: linear-gradient(to right, #072cff, #2c3e50); /*Efecto difuminado del color*/
     position: fixed;
     top: 0;
     left: 0;
@@ -46,21 +46,40 @@ nav {
     padding: 15px 20px;
 }
 
-.menu-horizontal li:hover {
-    background: #f0d87a;
+
+/*Efecto para marcar amarrillo*/
+
+header a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #f1c40f;
+    transition: width 0.3s ease;
+}
+
+header a:hover::after {
+    width: 100%;
+}
+
+header a:hover {
+    color: #f1c40f;
+}
+
+
+.menu-horizontal li:hover .submenu-categorias {
+    display: block;
 }
 
 .submenu-categorias {
-    background-color: rgb(27, 0, 180);
+    background-color: #2c3e50;
     width: 200px;
     list-style: none;
     position: absolute;
     display: none;
     z-index: 1
-}
-
-.menu-horizontal li:hover .submenu-categorias {
-    display: block;
 }
 
 .submenu-categorias > li > a {
@@ -76,7 +95,7 @@ nav {
 
 .barra-busqueda {
     margin: 0 10px;
-        padding: 0.8rem 1rem;
+    padding: 0.8rem 1rem;
     border: none;
     border-radius: 20px;
     width: 250px;
@@ -85,13 +104,13 @@ nav {
     transition: all 0.3s ease;
 }
 
-.auth-buttons {
+.botones-autenticadores {
     display: flex;
     gap: 1rem;
     align-items: center;
 }
 
-.auth-link {
+.link-autenticarse {
     display: flex;
     align-items: center;
     gap: 0.5rem;
@@ -103,20 +122,279 @@ nav {
     background-color: #f8f9fa;
 }
 
-.auth-link:hover {
+.link-autenticarse:hover {
     background-color: #e9ecef;
     transform: translateY(-2px);
 }
 
-.auth-icon {
+.icono-autenticarse {
     width: 24px;
     height: 24px;
     object-fit: contain;
 }
 
-.auth-link span {
+.link-autenticarse span {
     font-size: 0.9rem;
     font-weight: 500;
+}
+
+
+
+/* Contenedor principal */
+.content-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+/* Descripción del concierto */
+.concert-description {
+    grid-column: 1 / 2;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.concert-description h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+.concert-description p {
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    color: #34495e;
+}
+
+/* Imagen del concierto */
+.concert-media {
+    grid-column: 2 / 3;
+    display: flex;
+    align-items: center;
+}
+
+.concert-media img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Sección de ubicación */
+.location {
+    grid-column: 1 / -1;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.location h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+.map-container {
+    width: 100%;
+    height: 450px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.map-container iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Sección de precios */
+.pricing {
+    grid-column: 1 / -1;
+    padding: 2rem;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.pricing h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1.5rem;
+}
+
+.price-list {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 2rem;
+}
+
+.price-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid #eee;
+    font-size: 1.1rem;
+}
+
+.buy-button {
+    background: linear-gradient(to right, #072cff, #2c3e50);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.buy-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Reproductor de Spotify */
+.spotify-player {
+    margin-top: 2rem;
+    width: 100%;
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    .content-grid {
+        grid-template-columns: 1fr;
+        padding: 1rem;
+    }
+
+    .concert-description,
+    .concert-media {
+        grid-column: 1 / -1;
+    }
+
+    .concert-description h1 {
+        font-size: 2rem;
+    }
+
+    .concert-description,
+    .location,
+    .pricing {
+        padding: 1.5rem;
+    }
+
+    .price-list li {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .map-container {
+        height: 300px;
+    }
+}
+
+@media (max-width: 480px) {
+    .concert-description h1 {
+        font-size: 1.8rem;
+    }
+
+    .location h2,
+    .pricing h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
+
+/*PARTE DEL FOOTER*/
+
+
+/* Estilos generales del footer */
+footer {
+    background: linear-gradient(to right, #072cff, #2c3e50); /*Efecto difuminado del color*/
+    color: white;
+    padding: 3rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+/* Enlaces principales */
+footer > div:first-child {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-size: 0.95rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+/* Efecto de subrayado al hover */
+footer a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -4px;
+    left: 0;
+    background-color: #f1c40f;
+    transition: width 0.3s ease;
+}
+
+footer a:hover::after {
+    width: 100%;
+}
+
+footer a:hover {
+    color: #f1c40f;
+}
+
+/* Redes sociales */
+.redes-sociales {
+    display: flex;
+    gap: 1.5rem;
+}
+
+.redes-sociales a {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    transition: all 0.3s ease;
+}
+
+.redes-sociales a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Diseño Responsive */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column;
+        text-align: center;
+        padding: 2rem 1rem;
+    }
+
+    footer > div:first-child {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .redes-sociales {
+        margin-top: 1.5rem;
+    }
 }
 
 

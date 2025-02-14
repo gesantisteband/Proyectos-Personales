@@ -2,7 +2,7 @@ body {
     font-family: Arial, Helvetica, sans-serif; 
     margin: 0; 
     padding: 0;
-    background: rgb(240, 227, 227);
+    background: rgb(245, 243, 243);
     padding-top: 110px;
 }  
 
@@ -15,7 +15,7 @@ header {
     justify-content: space-between; 
     align-items: center;
     padding: 0px;
-    background: linear-gradient(to right, #3498db, #2c3e50);
+    background: linear-gradient(to right, #072cff, #2c3e50); /*Efecto difuminado del color*/
     position: fixed;
     top: 0;
     left: 0;
@@ -150,41 +150,80 @@ main {
     padding: 2rem;
 }
 
-/* Sección de evento destacado */
-.event-highlight {
-    margin-bottom: 3rem;
-    border-radius: 15px;
+/*Para el Carrusel de imágenes principal*/
+.carousel {
+    width: 100%;
+    max-width: 1500px;
+    margin: 0 auto 3rem auto;
     overflow: hidden;
+    border-radius: 15px;
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-    transition: transform 0.3s ease;
 }
 
-.event-highlight:hover {
-    transform: scale(1.01);
+.carousel-inner {
+    display: flex;
+    width: 600%; /* 100% × 6 imágenes */
+    animation: carousel 10s infinite; /* Tiempo por imagen que se puede ir graduando */
 }
 
-.event-highlight img {
-    display: block;
+.carousel-item {
+    width: 16.666%; /* 100% ÷ 6 imágenes */
+}
+
+.carousel-item img {
     width: 100%;
     height: auto;
+    display: block;
 }
 
+/* Animación ajustada para 6 imágenes */
+@keyframes carousel {
+    0%, 16% {
+        transform: translateX(0);
+    }
+    20%, 36% {
+        transform: translateX(-16.666%);
+    }
+    40%, 56% {
+        transform: translateX(-33.332%);
+    }
+    60%, 76% {
+        transform: translateX(-49.998%);
+    }
+    80%, 96% {
+        transform: translateX(-66.664%);
+    }
+    100% {
+        transform: translateX(-83.33%);
+    }
+}
+
+/* Pausa la animación cuando el usuario hace hover */
+.carousel-inner:hover {
+    animation-play-state: paused;
+}
+
+
+
+
+
+
 /* Categorías de eventos */
-.category {
+.categoria {
     margin-bottom: 4rem;
 }
 
-.category h2 {
+.categoria h2 {
     font-size: 2rem;
     color: #2c3e50;
     margin-bottom: 1.5rem;
     padding-bottom: 0.5rem;
-    border-bottom: 3px solid #3498db;
+    border-bottom: 3px solid #072cff; /*Color que hace juego con el diseño de la página*/
     display: inline-block;
 }
 
 /* Contenedor de eventos */
-.events {
+.eventos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
@@ -192,7 +231,7 @@ main {
 }
 
 /* Tarjetas de eventos individuales */
-.event {
+.evento {
     border-radius: 10px;
     overflow: hidden;
     box-shadow: 0 3px 10px rgba(0,0,0,0.1);
@@ -200,22 +239,22 @@ main {
     cursor: pointer;
 }
 
-.event:hover {
+.evento:hover {
     transform: translateY(-5px);
     box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
-.event img {
+.evento img {
     width: 100%;
     height: auto;
     display: block;
 }
 
 /* Botón "Ver más" */
-.category a {
+.categoria a {
     display: inline-block;
     padding: 0.8rem 2rem;
-    background: linear-gradient(to right, #3498db, #2c3e50);
+    background: linear-gradient(to right, #072cff, #2c3e50); /*Efecto difuminado del color*/
     color: white;
     text-decoration: none;
     border-radius: 25px;
@@ -224,10 +263,10 @@ main {
     margin-top: 1rem;
 }
 
-.category a:hover {
+.categoria a:hover {
     transform: translateY(-2px);
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    background: linear-gradient(to right, #2980b9, #2c3e50);
+    background: linear-gradient(to right, #072cff, #2c3e50); /*Efecto difuminado del color*/
 }
 
 /* Diseño responsive */
@@ -236,12 +275,12 @@ main {
         padding: 1rem;
     }
 
-    .events {
+    .eventos {
         grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
         gap: 1rem;
     }
 
-    .category h2 {
+    .categoria h2 {
         font-size: 1.5rem;
     }
 
@@ -266,7 +305,7 @@ main {
 
 /* Estilos generales del footer */
 footer {
-    background: linear-gradient(to right, #3498db, #2c3e50);
+    background: linear-gradient(to right, #072cff, #2c3e50); /*Efecto difuminado del color*/
     color: white;
     padding: 3rem 2rem;
     display: flex;
