@@ -1,42 +1,36 @@
 body {
-    font-family: Arial, Helvetica, sans-serif; 
-    margin: 0; 
-    padding: 0;
-    background: rgb(245, 243, 243);
-    padding-top: 110px;
+    font-family: Arial, Helvetica, sans-serif; /*Fuente de letra para todo el body*/
+    background: rgb(245, 243, 243); /*Fondo de color medio blanco para todo el body*/
+    padding-top: 100px; /*Para asegurar que el body se vea siempre más abajo que la cabecera*/
 }  
-
-
 
 /*PARTE DE ARRIBA*/
 
 header {
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center;
-    padding: 0px;
-    background: linear-gradient(to right, #072cff, #2c3e50); /*Efecto difuminado del color*/
-    position: fixed;
-    top: 0;
+    display: flex; /*Activa el modelo flexbox para el header*/
+    justify-content: space-between; /*Distribuye los elementos con espacio entre ellos*/
+    align-items: center; /*Centra verticalmente los elementos*/
+    background: linear-gradient(to right, #072cff, #2c3e50); /*Efecto degradado del color azul al casi negro*/
+    position: fixed; /* Mantiene el header fijo en la parte superior*/
+    top: 0; /*Ocupa todo el ancho de la pantalla*/
     left: 0;
     right: 0;
     width: 100%;
     z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
-    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /*Añade una sombra sutil*/
 }
 
 nav {
-    max-width: 900px;
-    margin: auto;
-    background-color: none;
-    font-size: 20px;
-    margin-top: 40px;
+    max-width: 900px; /* Añade una sombra sutil*/
+    margin: auto; /*Centra la navegación horizontalmente*/
+    font-size: 20px; /*Tamaño de fuente para los enlaces*/
+    margin-top: 20px; /*Espacio superior*/
 }
 
 .menu-horizontal { 
-    display: flex;
-    list-style: none;
-    justify-content: space-around;
+    display: flex; /*Organiza los elementos del menú horizontalmente*/
+    list-style: none; /*Elimina los puntos de la lista*/
+    justify-content: space-around; /*Distribuye los elementos uniformemente*/
 }
 
 .menu-horizontal > li > a {
@@ -68,13 +62,12 @@ header a:hover {
     color: #f1c40f;
 }
 
-
 .menu-horizontal li:hover .submenu-categorias {
     display: block;
 }
 
 .submenu-categorias {
-    background-color: #2c3e50;
+    background-color: #0621bd;
     width: 200px;
     list-style: none;
     position: absolute;
@@ -90,7 +83,7 @@ header a:hover {
 }
 
 .submenu-categorias > li:hover {
-    background-color: none;
+    background-color: rgb(255, 255, 88);
 }
 
 .barra-busqueda {
