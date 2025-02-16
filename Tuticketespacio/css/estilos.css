@@ -1,10 +1,14 @@
+/*ESTILOS PARA TODO EL BODY*/
+
 body {
     font-family: Arial, Helvetica, sans-serif; /*Fuente de letra para todo el body*/
     background: rgb(245, 243, 243); /*Fondo de color medio blanco para todo el body*/
     padding-top: 100px; /*Para asegurar que el body se vea siempre más abajo que la cabecera*/
-}  
+}
 
-/*PARTE DE ARRIBA*/
+
+
+/*HEADER*/
 
 header {
     display: flex; /*Activa el modelo flexbox para el header*/
@@ -16,12 +20,12 @@ header {
     left: 0;
     right: 0;
     width: 100%;
-    z-index: 1000; /* Asegura que el header esté por encima de otros elementos */
+    z-index: 1000; /*Asegura que el header esté por encima de otros elementos*/
     box-shadow: 0 2px 5px rgba(0,0,0,0.2); /*Añade una sombra sutil*/
 }
 
 nav {
-    max-width: 900px; /* Añade una sombra sutil*/
+    max-width: 900px; /*Limita el ancho máximo de la navegación*/
     margin: auto; /*Centra la navegación horizontalmente*/
     font-size: 20px; /*Tamaño de fuente para los enlaces*/
     margin-top: 20px; /*Espacio superior*/
@@ -143,56 +147,59 @@ main {
     padding: 2rem;
 }
 
+/*CARRUSEL*/
+
 /*Para el Carrusel de imágenes principal*/
-.carousel {
+.carrusel {
     width: 100%;
-    max-width: 1500px;
+    max-width: 1500px; /*Ancho máximo del carrusel*/
     margin: 0 auto 3rem auto;
-    overflow: hidden;
-    border-radius: 15px;
+    overflow: hidden; /*Oculta el contenido que se sale*/
+    border-radius: 15px; /*Bordes redondeados*/
     box-shadow: 0 4px 15px rgba(0,0,0,0.1);
 }
 
-.carousel-inner {
-    display: flex;
-    width: 600%; /* 100% × 6 imágenes */
-    animation: carousel 10s infinite; /* Tiempo por imagen que se puede ir graduando */
+.carrusel-interior {
+    display: flex; /*Organiza los elementos del carrusel horizontalmente*/
+    width: 600%; /* 100% × 6 imágenes. Ancho total para 6 imágenes */
+    animation: carousel 10s infinite; /*Animación automática. Tiempo por imagen que se puede ir graduando */
 }
 
-.carousel-item {
+.carrusel-item {
     width: 16.666%; /* 100% ÷ 6 imágenes */
 }
 
-.carousel-item img {
+.carrusel-item img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-/* Animación ajustada para 6 imágenes */
-@keyframes carousel {
-    0%, 16% {
+/* Animación ajustada para 6 imágenes. Esta regla es ajustable para la cantidad de imágenes que se quiera usar en el carrusel. 100/la cantidad de imágenes usadas. Para que cada imagen se muestre durante aproximadamente el mismo tiempo*/
+
+@keyframes carousel { /*La regla @keyframes carousel define una secuencia de animación llamada "carousel" que controla cómo se mueven las imágenes*/
+    0%, 16% { /*La primera imagen se mantiene en su posición original (0) durante el 16% del tiempo total*/
         transform: translateX(0);
     }
-    20%, 36% {
-        transform: translateX(-16.666%);
+    20%, 36% { /*Hay un pequeño salto del 16% al 20% para hacer la transición*/
+        transform: translateX(-16.666%); /*Mueve el contenedor hacia la izquierda un 16.666% (1/6 del ancho total). Representa el ancho de la imagen*/
     }
     40%, 56% {
-        transform: translateX(-33.332%);
+        transform: translateX(-33.332%); /*Mueve el contenedor dos posiciones hacia la izquierda (2/6 del ancho)*/
     }
     60%, 76% {
-        transform: translateX(-49.998%);
+        transform: translateX(-49.998%); /*Mueve el contenedor tres posiciones (3/6 del ancho)*/
     }
     80%, 96% {
-        transform: translateX(-66.664%);
+        transform: translateX(-66.664%); /*Mueve el contenedor cuatro posiciones (4/6 del ancho)*/
     }
     100% {
-        transform: translateX(-83.33%);
+        transform: translateX(-83.33%); /*Completa el movimiento a la última imagen (5/6 del ancho)*/
     }
 }
 
-/* Pausa la animación cuando el usuario hace hover */
-.carousel-inner:hover {
+/* Pausa la animación cuando el usuario hace hover. O sea, cuando pone el cursor sobre el carrusel, la animación se pausa. Al quitar el cursor la animación continúa.*/
+.carrusel-interior:hover {
     animation-play-state: paused;
 }
 
