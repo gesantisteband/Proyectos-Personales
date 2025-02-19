@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tuticketespacio</title>
+    <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+    <header>
+        <div>
+            <a href="index.html"><img src="images/logo.png" alt="logo" width="75%"></a> <!--Alt es el texto que se mostrará en lugar de la imagen en caso de que se produzca un error en la carga de la misma.-->
+        </div>
+
+        <div class="menu">
+            <nav> <!--Eqiqueta que proporciona enlaces de navegación-->
+                <ul class="menu-horizontal">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="#">Categorías</a>
+                        <ul class="submenu-categorias"> <!--Lista desordenada-->
+                            <li><a href="pages/conciertos.html">Conciertos</a></li>
+                            <li><a href="pages/teatros.html">Teatro</a></li>
+                            <li><a href="pages/deportes.html">Deportes</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Blog</a></li>
+                    <li><a href="#">Entrevistas</a></li>
+                </ul>
+            </nav>  
+        </div>
+
+        <div>
+        <input class="barra-busqueda" type="text" placeholder="Buscar eventos..."> <!--Input es un campo de entrada de datos que permite a los usuarios ingresar información en un formulario. El atributo type en HTML define el tipo de entrada que se espera en un formulario. Placeholder, lo que dirá en la barra-->
+        </div>
+
+        <div class="botones-autenticadores">
+            <a href="pages/iniciodesesion.html" class="link-autenticarse">
+                <img src="images/login.png" alt="Icono de ingreso" class="icono-autenticarse">
+                <span>Ingresar</span>
+            </a>
+            <a href="pages/registro.html" class="link-autenticarse">
+                <img src="images/login.png" alt="Icono de registro" class="icono-autenticarse">
+                <span>Registrarse</span>
+            </a>
+        </div>
+    </header>
+
+    <main>
+        <div class="carrusel">
+            <div class="carrusel-interior">
+                <div class="carrusel-item">
+                    <img src="images/destacado1.png" alt="Evento 1">
+                </div>
+                <div class="carrusel-item">
+                    <img src="images/destacado2.jpg" alt="Evento 2">
+                </div>
+                <div class="carrusel-item">
+                    <img src="images/destacado3.jpg" alt="Evento 3">
+                </div>
+                <div class="carrusel-item">
+                    <img src="images/destacado4.png" alt="Evento 4">
+                </div>
+                <div class="carrusel-item">
+                    <img src="images/destacado5.jpg" alt="Evento 5">
+                </div>
+                <div class="carrusel-item">
+                    <img src="images/destacado6.jpg" alt="Evento 6">
+                </div>
+            </div>
+        </div>
+
+        <div class="categoria">
+            <h2>Conciertos</h2>
+            <div class="eventos">
+                <div class="evento"><img src="images/Conciertos/AndresCalamaro.png" alt="Evento 1" width="400px"></div>
+                <div class="evento"><img src="images/Conciertos/HaAsh.png" alt="Evento 2" width="400px"></div>
+                <div class="evento"><img src="images/Conciertos/ShawnMendes.png" alt="Evento 3" width="400px"></div>
+            </div>
+            <a href="./pages/conciertos.html">Ver más</a>
+        </div>
+
+        <div class="categoria">
+            <h2>Teatro</h2>
+            <div class="eventos">
+                <div class="evento"><img src="images/Teatro/Hamlet.png" alt="Evento 1" width="400px"></div>
+                <div class="evento"><img src="images/Teatro/ElBarberoDeSevilla.png" alt="Evento 2" width="400px"></div>
+                <div class="evento"><img src="images/Teatro/ElHombreSinMemoria.png" alt="Evento 3" width="400px"></div>            
+            </div>
+            <a href="./pages/teatros.html">Ver más</a>
+        </div>
+
+        <div class="categoria">
+            <h2>Deportes</h2>
+            <div class="eventos">
+                <div class="evento"><img src="images/Deportes/TheColorRun.png" alt="Evento 1" width="400px"></div>
+                <div class="evento"><img src="images/Deportes/LosJotitas.png" alt="Evento 2" width="400px"></div>
+                <div class="evento"><img src="images/Deportes/VoleyMaster.png" alt="Evento 3" width="400px"></div>            
+            </div>
+            <a href="./pages/deportes.html">Ver más</a>
+        </div>
+    </main>
+
+    <footer>
+        <div>
+            <a href="#">Acerca de Nosotros</a>
+            <a href="#">Centro de Ayuda</a>
+            <a href="#">Términos y Condiciones</a>
+            <a href="#">Libro de Reclamaciones</a>
+        </div>
+        <div class="redes-sociales">
+            <a href="#">Facebook</a>
+            <a href="#">Instagram</a>
+            <a href="#">TikTok</a>
+        </div>
+
+        <div>
+            <a href="index.html"><img src="images/logo.png" alt="logo" width="80%"></a>
+        </div>
+    </footer>
+</body>
+</html>

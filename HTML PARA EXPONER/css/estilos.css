@@ -1,0 +1,403 @@
+/*ESTILOS PARA TODO EL BODY*/
+
+body {
+    font-family: Arial, Helvetica, sans-serif; /*Fuente de letra para todo el body*/
+    background: rgb(245, 243, 243); /*Fondo de color medio blanco para todo el body*/
+    padding-top: 100px; /*Para asegurar que el body se vea siempre más abajo que la cabecera*/
+}
+
+
+
+/*HEADER*/
+
+header {
+    display: flex; /*Activa el modelo flexbox para el header*/
+    justify-content: space-between; /*Distribuye los elementos con espacio entre ellos*/
+    align-items: center; /*Centra verticalmente los elementos*/
+    background: linear-gradient(to right, #072cff, #2c3e50); /*Efecto degradado del color azul al casi negro*/
+    position: fixed; /* Mantiene el header fijo en la parte superior*/
+    top: 0; /*Ocupa todo el ancho de la pantalla*/
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000; /*Asegura que el header esté por encima de otros elementos*/
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2); /*Añade una sombra sutil*/
+}
+
+nav {
+    max-width: 900px; /*Limita el ancho máximo de la navegación*/
+    margin: auto; /*Centra la navegación horizontalmente*/
+    font-size: 20px; /*Tamaño de fuente para los enlaces*/
+    margin-top: 20px; /*Espacio superior*/
+}
+
+.menu-horizontal { 
+    display: flex; /*Organiza los elementos del menú horizontalmente*/
+    list-style: none; /*Elimina los puntos de la lista*/
+    justify-content: space-around; /*Distribuye los elementos uniformemente*/
+}
+
+/*Este selector apunta específicamente a los enlaces (a) que son hijos directos (>) de elementos de lista (li) que a su vez son hijos directos de la clase .menu-horizontal. Es muy específico para asegurar que estos estilos solo se apliquen a los enlaces del menú principal*/
+.menu-horizontal > li > a {
+    text-decoration: none; /*Elimina el subrayado predeterminado de los enlaces*/
+    color: white; /*Establece el color del texto de los enlaces a blanco*/
+    display: block; /*Hace que cada enlace sea un bloque. Facilita que todo el área sea clickeable*/
+    padding: 15px 20px; /*Añade espacio interno alrededor del texto del enlace, 15px es el padding vertical (arriba y abajo), es el padding horizontal (izquierda y derecha)*/ 
+}
+
+
+/*PARA EFECTO DE SUBRAYADO AMARILLO
+- Al pasar el cursos sobre un enlace del header, el texto se vuelve amarillo. Y aparece un subrayado amarillo que se expande de izquierda a derecha*/
+
+header a::after { /*Selecciona el pseudo elemento ::after de los enlaces en el header. Este se usa para crea la línea de subrayado*/
+    content: ''; /*Define el contenido del pseudo elemento como vacío. Es obligatorio para que el elemento sea visible*/
+    position: absolute; /*Posiciona el elemento de manera absoluta, permite moverlo independientemente de otros elementos*/
+    width: 0; /*Inicialmente el subrayado tiene ancho 0*/
+    height: 2px; /*El subrayado tendrá grosor de 2 píxeles. Modificable*/
+    bottom: -4px; /*Coloca al subrayado 4 píxeles debajo del texto*/
+    left: 0; /*Alinea el subrayado al borde izquierdo del enlace*/
+    background-color: #f1c40f; /*Color amarillo al subrayado*/
+    transition: width 0.3s ease; /*Crea una transición suave del ancho durante 0.3 segundos. "ease" hace que la animación se más natural*/
+}
+
+header a:hover::after { /*Cuando el cursor está sobre el enlace, el subrayado se expande al 100%*/
+    width: 100%;
+}
+
+header a:hover { /*Al pasar el cursor, el texto del enlace se vuelve amarillo*/
+    color: #f1c40f;
+}
+
+
+/*SUBMENU*/
+
+.menu-horizontal li:hover .submenu-categorias { /*Cuando el cursor está sobre categorías, muestra el submenú*/
+    display: block; /*Hace visible el submenú*/
+}
+
+.submenu-categorias { /*Estilos del submenú*/
+    background-color: #0621bd; /*Fondo azul*/
+    width: 200px; /*Ancho fijo del submenú*/
+    list-style: none; /*Elimina los puntos de la lista*/
+    position: absolute; /*Posicionamiento absolute para que flore sobre otros elementos*/
+    display: none; /*Oculto por defecto*/
+    z-index: 1 /*Asegura que aparezca por encima de otros elementos*/
+}
+
+.submenu-categorias > li > a { /*Enlaces del submenú*/
+    text-decoration: none; /*Elimina el subrayado de los enlaces*/
+    color: white; /*Texto en blanco*/
+    padding: 15px; /*Espacio interno*/
+    display: block /*Hace que todo el área sea clickeable*/
+}
+
+.submenu-categorias > li:hover {
+    background-color: rgb(255, 255, 88); /*Cambia a amarillo al pasar el cursor sobre cada elemento del submenú.*/
+}
+
+.barra-busqueda { /*Barra de búsqueda*/
+    margin: 0 10px; /*Margen horizontal*/
+    padding: 0.8rem 1rem; /*Espacio interno*/
+    border: none; /*Sin borde*/
+    border-radius: 20px; /*Bordes redondeados*/
+    width: 250px; /*Ancho fijo*/
+    font-size: 1rem; /*Tamaño de texto*/
+    background-color: rgba(255, 255, 255, 0.9); /*Fondo blanco semitransparente*/
+    transition: all 0.3s ease; /*Animación suave*/
+}
+
+.botones-autenticadores { /*Botones de autenticación*/
+    display: flex; /*Layaou flexible*/
+    gap: 1rem; /*Espacio entre elementos*/
+    align-items: center; /*Alineación vertical centrada*/
+}
+
+.link-autenticarse { /*Enlaces de autenticación*/
+    display: flex; /*Layaout flexible*/
+    align-items: center; /*Alineación vertical centrada*/
+    gap: 0.5rem; /*Espacio entre elementos*/
+    text-decoration: none; /*Sin subrayado*/
+    color: #333; /*Color de texto gris oscuro*/
+    padding: 0.5rem 1rem; /*Espacio interno*/
+    border-radius: 5px; /*Bordes redondeados*/
+    transition: all 0.3s ease; /*Animación suave*/
+    background-color: #f8f9fa; /*Fondo gris claro*/
+}
+
+.link-autenticarse:hover { /*Efecto haver del enlace de autenticación*/
+    background-color: #e9ecef; /*Cambia el color de fondo*/
+    transform: translateY(-2px); /*Eleva ligeramente el boton. Es una transformación*/
+} 
+
+.icono-autenticarse { /*Icono dentro de botón autenticación*/
+    width: 24px; /*Ancho fijo*/
+    height: 24px; /*Alto fijo*/
+    object-fit: contain; /*Mantiene la proporción de la imagen*/
+}
+
+/*<span> Es un contenedor en línea que se utiliza para aplicar estilo a texto o agrupar elementos en línea*/
+.link-autenticarse span { /*Texto de enlace de autenticación*/
+    font-size: 0.9rem; /*Tamaño de texto*/
+    font-weight: 500; /*Grosor de fuente medio*/
+}
+
+
+
+
+/*MAIN*/
+
+/* Estilos generales del main */
+/*rem: Nos permite definir una medida de forma relativa al tamaño de la fuente raíz (la del elemento html )*/
+main {
+    max-width: 1600px; /*Limita el ancho máximo del contenido principal a 1600 píxeles*/
+    margin: 0 auto; /*Centra el contenido horizontalmente (0 arriba/abajo, auto izquierda/derecha)*/
+    padding: 2rem; /*Añade un espacio interno de 2rem en todos los lados*/
+}
+
+/*CARRUSEL*/
+
+/*Para el Carrusel de imágenes principal*/
+.carrusel {
+    width: 100%; /*Ocupa todo el ancho disponible de su contenedor*/
+    max-width: 1500px; /*Limita el ancho máximo a 1500 píxeles*/
+    margin: 0 auto 3rem auto; /*Márgenes: 0 arriba, auto izquierda/derecha, 3rem abajo*/
+    overflow: hidden; /*Oculta el contenido que se sale del contenedor*/
+    border-radius: 15px; /*Bordes redondeados*/
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1); /*Añade una sombra sutil*/
+}
+
+.carrusel-interior {
+    display: flex; /*Organiza los elementos del carrusel horizontalmente*/
+    width: 600%; /* 100% × 6 imágenes. Ancho total para 6 imágenes */
+    animation: carousel 10s infinite; /*Animación automática. Tiempo por imagen que se puede ir graduando */
+}
+
+.carrusel-item {
+    width: 16.666%; /* 100% ÷ 6 imágenes */
+}
+
+.carrusel-item img {
+    width: 100%; /*La imagen ocupa todo el ancho de su contenedor*/
+    height: auto; /*La altura se ajusta automáticamente manteniendo la proporción*/
+    display: block; /*Elimina espacios no deseados alrededor de la imagen*/
+} 
+
+/* Animación ajustada para 6 imágenes. Esta regla es ajustable para la cantidad de imágenes que se quiera usar en el carrusel. 100/la cantidad de imágenes usadas. Para que cada imagen se muestre durante aproximadamente el mismo tiempo*/
+
+@keyframes carousel { /*La regla @keyframes carousel define una secuencia de animación llamada "carousel" que controla cómo se mueven las imágenes*/
+    0%, 16% { /*La primera imagen se mantiene en su posición original (0) durante el 16% del tiempo total*/
+        transform: translateX(0);
+    }
+    20%, 36% { /*Hay un pequeño salto del 16% al 20% para hacer la transición*/
+        transform: translateX(-16.666%); /*Mueve el contenedor hacia la izquierda un 16.666% (1/6 del ancho total). Representa el ancho de la imagen*/
+    }
+    40%, 56% {
+        transform: translateX(-33.332%); /*Mueve el contenedor dos posiciones hacia la izquierda (2/6 del ancho)*/
+    }
+    60%, 76% {
+        transform: translateX(-49.998%); /*Mueve el contenedor tres posiciones (3/6 del ancho)*/
+    }
+    80%, 96% {
+        transform: translateX(-66.664%); /*Mueve el contenedor cuatro posiciones (4/6 del ancho)*/
+    }
+    100% {
+        transform: translateX(-83.33%); /*Completa el movimiento a la última imagen (5/6 del ancho)*/
+    }
+}
+
+/* Pausa la animación cuando el usuario hace hover. O sea, cuando pone el cursor sobre el carrusel, la animación se pausa. Al quitar el cursor la animación continúa.*/
+.carrusel-interior:hover {
+    animation-play-state: paused;
+}
+
+
+
+
+
+
+/* CATEGORÍAS DE EVENTOS */
+.categoria {
+    margin-bottom: 4rem; /*Espacio inferior entre categorías*/
+}
+
+.categoria h2 {
+    font-size: 2rem; /*Tamaño de texto del título*/
+    color: #2c3e50; /*Color azul oscuro del texto*/
+    margin-bottom: 1.5rem; /*Espacio debajo del título*/
+    padding-bottom: 0.5rem;/*Espacio interno inferior*/
+    border-bottom: 3px solid #072cff; /*Línea azul debajo del título*/
+    display: inline-block; /*Para que la línea solo ocupe el ancho del texto*/
+}
+
+/* Contenedor de eventos */
+.eventos {
+    display: grid; /*Activa el layout grid*/
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /*Columnas responsivas*/
+    gap: 2rem; /*Espacio entre eventos*/
+    margin-bottom: 1.5rem; /*Espacio inferior*/
+}
+
+/* Tarjetas de eventos individuales */
+.evento {
+    border-radius: 10px; /*Esquinas redondeadas*/
+    overflow: hidden; /*Oculta contenido que se salga*/
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1); /*Sombra suave*/
+    transition: all 0.3s ease; /*Animación suave*/
+    cursor: pointer; /*Cambia el cursor a mano*/
+}
+
+.evento:hover {
+    transform: translateY(-5px); /*Eleva la tarjeta al pasar el cursor*/
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2); /*Sombra más pronunciada*/
+}
+
+.evento img {
+    width: 100%; /*Imagen ocupa todo el ancho*/
+    height: auto; /*Altura automática manteniendo proporción*/
+    display: block; /*Elimina espacios extra*/
+}
+
+/* Botón "Ver más" */
+.categoria a {
+    display: inline-block; /*Permite propiedades de bloque manteniendo flujo inline*/
+    padding: 0.8rem 2rem; /*Espacio interno*/
+    background: linear-gradient(to right, #072cff, #2c3e50); /*Efecto degradado del color*/
+    color: white; /*Texto blanco*/
+    text-decoration: none; /*Sin subrayado*/
+    border-radius: 25px; /*Bordes muy redondeados*/
+    font-weight: 500; /*Grosor de fuente medio*/
+    transition: all 0.3s ease; /*Animación suave*/
+    margin-top: 1rem; /*Espacio superior*/
+}
+
+.categoria a:hover {
+    transform: translateY(-2px); /*Eleva ligeramente el botón*/
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2); /*Añade sombra*/
+    background: linear-gradient(to right, #072cff, #2c3e50); /*Efecto degradado del color*/
+}
+
+/* Diseño responsive */
+@media (max-width: 768px) {
+    main {
+        padding: 1rem; /*Reduce el padding en móviles*/
+    }
+
+    .eventos {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /*justa el tamaño de columnas*/
+        gap: 1rem; /*Reduce el espacio entre eventos*/
+    }
+
+    .categoria h2 {
+        font-size: 1.5rem; /*Reduce el tamaño del título*/
+    }
+
+    .event-highlight {
+        margin-bottom: 2rem; /*Ajusta el espacio inferior*/
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/*PARTE DEL FOOTER*/
+
+
+/* Estilos generales del footer */
+footer {
+    background: linear-gradient(to right, #072cff, #2c3e50); /*Degradado de azul a gris oscuro*/
+    color: white; /*Texto en blanco*/
+    padding: 3rem 2rem; /*Espacio interno (3rem arriba/abajo, 2rem izquierda/derecha)*/
+    display: flex; /*Activa el layout flexbox*/
+    justify-content: space-between; /*Distribuye espacio entre elementos*/
+    align-items: center; /*Centra elementos verticalmente*/
+    flex-wrap: wrap; /*Permite que los elementos se envuelvan en pantallas pequeñas*/
+    gap: 2rem; /*Espacio entre elementos*/
+} 
+
+/* Enlaces principales */
+footer > div:first-child {
+    display: flex; /*Layout flexbox*/
+    flex-wrap: wrap; /*Permite envolver elementos*/
+    gap: 2rem; /*Espacio entre enlaces*/
+}
+
+footer a {
+    color: white; /*Enlaces en blanco*/
+    text-decoration: none; /*Sin subrayado*/
+    font-size: 0.95rem; /*Tamaño de texto*/
+    position: relative; /*Para el efecto de subrayado*/
+    transition: all 0.3s ease; /*Animación suave*/
+}
+
+/* Efecto de subrayado al hover */
+footer a::after {
+    content: ''; /*Crea pseudo-elemento vacío*/
+    position: absolute; /*Posicionamiento absoluto*/
+    width: 0; /*Inicialmente sin ancho*/
+    height: 2px; /*Grosor de la línea*/
+    bottom: -4px; /*4px debajo del texto*/
+    left: 0; /*Alineado a la izquierda*/
+    background-color: #f1c40f; /*Color amarillo*/
+    transition: width 0.3s ease; /*Animación del ancho*/
+}
+
+footer a:hover::after {
+    width: 100%; /*Expande el subrayado al 100%*/
+}
+
+footer a:hover {
+    color: #f1c40f; /*Texto amarillo al hover*/
+}
+
+/* Redes sociales */
+.redes-sociales {
+    display: flex; /*Layout flexbox*/
+    gap: 1.5rem; /*Espacio entre iconos*/
+} 
+
+.redes-sociales a {
+    display: flex; /*Layout flexbox*/
+    align-items: center; /*Centra contenido verticalmente*/
+    padding: 0.5rem 1rem; /*Espacio interno*/
+    border-radius: 20px; /*Bordes redondeados*/
+    background: rgba(255, 255, 255, 0.1); /*Fondo blanco semi-transparente*/
+    transition: all 0.3s ease; /*Animación suave*/
+}
+
+.redes-sociales a:hover {
+    background: rgba(255, 255, 255, 0.2); /*Fondo más claro al hover*/
+    transform: translateY(-2px); /*Eleva ligeramente el botón*/
+}
+
+/* Diseño Responsive */
+@media (max-width: 768px) {
+    footer {
+        flex-direction: column; /*Elementos en columna*/
+        text-align: center; /*Texto centrado*/
+        padding: 2rem 1rem; /* Reduce el padding*/
+    }
+
+    footer > div:first-child {
+        flex-direction: column; /*Enlaces en columna*/
+        gap: 1rem; /*Reduce el espacio entre enlaces*/
+    }
+
+    .redes-sociales {
+        margin-top: 1.5rem; /*Espacio superior*/
+    }
+}
+
+/*Un footer moderno con degradado de color
+Enlaces con efecto de subrayado animado
+Iconos de redes sociales con efectos hover
+Un diseño completamente responsivo
+Transiciones y animaciones suaves
+Adaptación perfecta a dispositivos móviles*/
